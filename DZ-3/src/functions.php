@@ -105,39 +105,29 @@ function task2()
     $product = array(
         "productName" => "Car",
         "productModel" => "BMW",
-        "component" => array(
-            array(
-                "productID" => 22,
-                "color" => "red",
-                "quantity" => 1
-            ),
-            array(
-                "productID" => 3,
-                "color" => "green",
-                "quantity" => 4
-            )
-        ),
-        "availability" => true
+        "color" => "red",
     );
     $json_text = json_encode($product);
 
+    //создан массив и сохранен в файле output.json
     $file = fopen('output.json', 'w');
     file_put_contents('output.json', $json_text);
-
     fclose($file);
+    echo "Файл успешно записан" . "</br>";
 
     //Открыть файл output.json. Используется функция rand().
+
     $change = rand(0, 1);
     if ($change == 1) {
-        $oldName = 'Old name';
-        $name = 'New name';
+        $oldName = "red";
+        $name = "black";
         $oldName = trim($oldName);
         $newName = trim($name);
         $fl = file_get_contents('output.json');
         $taskList = json_decode($fl, true);
-        foreach ($taskList as $key => $value) {
-            if ($oldName == $value) {
-                $taskList[$key] = $newName;
+        foreach ($taskList as $product) {
+            if (in_array($oldName, $product)) {
+                $taskList = array("color" => $newName);
             }
         }
         file_put_contents('output2.json', json_encode($taskList));
@@ -149,17 +139,16 @@ function task2()
         file_put_contents('output2.json', json_encode($taskList));
         unset($taskList);
     }
-    $readFromFiles = file_get_contents('output2.json') or die('ошибка');
 
     //сравнение и вывод информации
-    $firstFile = file_get_contents('output.json');
-    $secondFile = file_get_contents('output2.json');
-    $taskList1 = json_decode($firstFile, true);
-    $taskList2 = json_decode($secondFile, true);
-
-    $result = array_diff($taskList1, $taskList2);
-    echo "<br>Сравнение двух файлов<br>";
-    print_r($result);
+//    $firstFile = file_get_contents('output.json');
+//    $secondFile = file_get_contents('output2.json');
+//    $taskList1 = json_decode($firstFile, true);
+//    $taskList2 = json_decode($secondFile, true);
+//
+//    $result = array_diff($taskList2, $taskList1);
+//    echo "<br>Сравнение двух файлов<br>";
+//    echo $result;
 }
 
 function task3($value)
