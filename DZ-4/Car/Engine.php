@@ -10,12 +10,14 @@ class Engine
     private $state = "on";
     private $temperature = 0;
     protected $transmission = 0;
+    public $model;
     public $hp = 1;
     use TransmissionAuto;
     use TransmissionManual;
 
-    public function __construct($transmission, $hp)
+    public function __construct($model, $transmission, $hp)
     {
+        $this->model = $model;
         $this->transmission = $transmission;
         $this->hp = $hp;
     }
@@ -35,7 +37,7 @@ class Engine
 
     public function stopEngine()
     {
-        if ($this->state === self::STOP_STARTER) {
+        if ($this->state !== self::STOP_STARTER) {
             $this->state = self::STOP_STARTER;
             echo "Двигатель выключен<br>";
         }
@@ -64,6 +66,9 @@ class Engine
                 echo "Вентилятор включен!<br>";
             }
             echo "<br>Скорость $done км/ч. Температура двигателя $this->temperature C.<br>";
+            if ($done === $distance) {
+                echo "<br>Достигнут пункт назначения!<br>";
+            }
         }
     }
 
