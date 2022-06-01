@@ -65,7 +65,7 @@ class Engine
                 $this->temperature -= 10;
                 echo "Вентилятор включен!<br>";
             }
-            echo "<br>Скорость $done км/ч. Температура двигателя $this->temperature C.<br>";
+            echo "<br>Пройденный путь $done км. Температура двигателя $this->temperature C.<br>";
             if ($done === $distance) {
                 echo "<br>Достигнут пункт назначения!<br>";
             }
