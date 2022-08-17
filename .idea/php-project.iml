@@ -119,6 +119,17 @@
       <excludeFolder url="file://$MODULE_DIR$/VP-4/vendor/phpdocumentor/reflection-docblock" />
       <excludeFolder url="file://$MODULE_DIR$/VP-4/vendor/phpdocumentor/type-resolver" />
       <excludeFolder url="file://$MODULE_DIR$/VP-4/vendor/graham-campbell/result-type" />
+      <excludeFolder url="file://$MODULE_DIR$/VP-4/vendor/livewire/livewire" />
+      <excludeFolder url="file://$MODULE_DIR$/VP-4/vendor/mobiledetect/mobiledetectlib" />
+      <excludeFolder url="file://$MODULE_DIR$/VP-4/vendor/paragonie/constant_time_encoding" />
+      <excludeFolder url="file://$MODULE_DIR$/VP-4/vendor/pragmarx/google2fa" />
+      <excludeFolder url="file://$MODULE_DIR$/VP-4/vendor/bacon/bacon-qr-code" />
+      <excludeFolder url="file://$MODULE_DIR$/VP-4/vendor/dasprid/enum" />
+      <excludeFolder url="file://$MODULE_DIR$/VP-4/vendor/hardevine/shoppingcart" />
+      <excludeFolder url="file://$MODULE_DIR$/VP-4/vendor/jaybizzle/crawler-detect" />
+      <excludeFolder url="file://$MODULE_DIR$/VP-4/vendor/jenssegers/agent" />
+      <excludeFolder url="file://$MODULE_DIR$/VP-4/vendor/laravel/fortify" />
+      <excludeFolder url="file://$MODULE_DIR$/VP-4/vendor/laravel/jetstream" />
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
