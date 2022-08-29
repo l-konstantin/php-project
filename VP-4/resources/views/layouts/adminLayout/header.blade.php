@@ -5,12 +5,10 @@
             <li class="nav-list__item"><a href="{{route('admin.dashboard')}}" class="nav-list__item__link">Главная</a></li>
             <li class="nav-list__item"><a href="{{route('admin.categories')}}" class="nav-list__item__link">Категории</a></li>
             <li class="nav-list__item"><a href="{{route('admin.products')}}" class="nav-list__item__link">Продукция</a></li>
+            <li class="nav-list__item"><a href="{{route('admin.orders')}}" class="nav-list__item__link">Заказы</a></li>
             <li class="nav-list__item"><a href="{{route('admin.news')}}" class="nav-list__item__link">Новости</a></li>
         </ul>
     </nav>
-    <div class="header-contact">
-        <div class="header-contact__phone"><a href="#" class="header-contact__phone-link">Телефон: 33-333-33</a></div>
-    </div>
     <div class="header-container">
         @if(Route::has('login'))
             @auth

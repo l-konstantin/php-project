@@ -34,10 +34,25 @@ class CartComponent extends Component
         }
     }
 
+    public function setAmountForCheckout()
+    {
+        if (!Cart::count() > 0)
+        {
+            session()->forget('checkout');
+            return;
+        }
+
+        session()->put('checkout',[
+            'subtotal' => Cart::subtotal()
+        ]);
+    }
+
     public function render()
     {
         $categories = Category::all();
         $newsRandom = News::inRandomOrder()->limit(3)->get();
+
+        $this->setAmountForCheckout();
         return view('livewire.cart-component',[
             'categories' => $categories,
             'newsRandom' => $newsRandom,

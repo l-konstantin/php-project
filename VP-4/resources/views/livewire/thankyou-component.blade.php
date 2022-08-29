@@ -38,50 +38,25 @@
         <div class="content-middle">
             <div class="content-head__container">
                 <div class="content-head__title-wrap">
-                    <div class="content-head__title-wrap__title bcg-title">Проверка заказа</div>
+                    <div class="content-head__title-wrap__title bcg-title">Спасибо за Покупку</div>
                 </div>
                 <div class="content-head__search-block">
                     <div class="search-container">
                     </div>
                 </div>
             </div>
-            <form wire:submit.prevent="placeOrder">
-                <div class="row">
-                    <div class="col-md-12">
-                        <div class="wrap-address-billing">
-                            <h3 class="box-title">Данные покупателя</h3>
-                            <div class="billing-address">
-                                <p class="row-in-form">
-                                    <label for="name">Имя<span>*</span></label>
-                                    <input type="text" name="name" value="" placeholder="Your name" wire:model="firstname">
-                                </p>
-                                <p class="row-in-form">
-                                    <label for="email">Email:</label>
-                                    <input type="email" name="email" value="" placeholder="Type your email" wire:model="email">
-                                </p>
-                                <p class="row-in-form">
-                                    <label for="phone">Телефон:<span>*</span></label>
-                                    <input type="number" name="phone" value="" placeholder="10 digits format" wire:model="mobile">
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+            <main id="main" class="main-site">
 
-                @if(Session::has('checkout'))
-                    <div class="cart-product-list">
-                        <div class="cart-product-list__result-item">
-                            <div class="cart-product-list__result-item__text">Итого</div>
-                            <div class="cart-product-list__result-item__value">{{Session::get('checkout')['subtotal']}} рублей</div>
+                <div class="container pb-60">
+                    <div class="row">
+                        <div class="col-md-12 text-center">
+                            <h2>Thank you for your order</h2>
+                            <p>A confirmation email was sent.</p>
+                            <a href="/" class="btn btn-submit btn-submitx">Continue Shopping</a>
                         </div>
                     </div>
-                @endif
-                <div class="content-footer__container">
-                    <div class="btn-buy-wrap">
-                        <button type="submit" class="btn-buy-wrap__btn-link">Оплатить сейчас</button>
-                    </div>
-                </div>
-            </form>
+                </div><!--end container-->
+            </main>
         </div>
         <div class="content-bottom"></div>
     </div>

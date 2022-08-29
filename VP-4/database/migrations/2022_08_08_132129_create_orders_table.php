@@ -19,7 +19,7 @@ class CreateOrdersTable extends Migration
             $table->string('firstname');
             $table->string('mobile');
             $table->string('email');
-            $table->decimal('subtotal');
+            $table->string('subtotal');
             $table->timestamps();
             $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
         });

@@ -73,7 +73,7 @@ img {
 .nav-list {
   display: flex;
   flex-wrap: wrap;
-  max-width: 430px;
+  max-width: 530px;
   padding: 0;
   justify-content: center;
   height: 22px; }

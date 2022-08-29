@@ -3,7 +3,7 @@
     <nav class="main-navigation">
         <ul class="nav-list">
             <li class="nav-list__item"><a href="/" class="nav-list__item__link">Главная</a></li>
-            <li class="nav-list__item"><a href="#" class="nav-list__item__link">Мои заказы</a></li>
+            <li class="nav-list__item"><a href="{{route('user.orders')}}" class="nav-list__item__link">Мои заказы</a></li>
             <li class="nav-list__item"><a href="/news" class="nav-list__item__link">Новости</a></li>
             <li class="nav-list__item"><a href="/about" class="nav-list__item__link">О компании</a></li>
         </ul>
@@ -44,7 +44,7 @@
                     <a title="My account" href="">My Account ({{Auth::user()->name}})</a>
                     <ul class="submenu curency">
                         <li class="menu-item">
-                            <a title="dashboard" href="{{route('user.dashboard')}}">dashboard</a>
+                            <a title="orders" href="{{route('user.orders')}}">Мои заказы</a>
                         </li>
                         <li class="menu-item">
                             <a href="{{route('logout')}}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">Logout</a>

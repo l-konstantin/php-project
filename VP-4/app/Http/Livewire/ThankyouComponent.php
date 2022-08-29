@@ -1,23 +1,21 @@
 <?php
 
-namespace App\Http\Livewire\User;
+namespace App\Http\Livewire;
 
 use App\Models\Category;
 use App\Models\News;
-use App\Models\User;
-use Illuminate\Support\Facades\Auth;
 use Livewire\Component;
 
-class UserDashboardComponent extends Component
+class ThankyouComponent extends Component
 {
     public function render()
     {
         $categories = Category::all();
         $newsRandom = News::inRandomOrder()->limit(3)->get();
 
-        return view('livewire.user.user-dashboard-component',[
+        return view('livewire.thankyou-component',[
             'categories' => $categories,
-            'newsRandom' => $newsRandom,
+            'newsRandom' => $newsRandom
         ])->layout('layouts.main');
     }
 }

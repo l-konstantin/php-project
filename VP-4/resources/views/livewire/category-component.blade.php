@@ -63,7 +63,7 @@
                         </div>
                         <div class="products-category__list__item__description">
                             <span class="products-price">{{$product->product_price}} руб.</span>
-                            <a href="#" class="btn btn-blue">Купить</a>
+                            <a href="#" class="btn btn-blue" wire:click.prevent="store({{$product->id}},'{{$product->product_name}}',{{$product->product_price}})">Купить</a>
                         </div>
                     </div>
                     @endforeach

@@ -38,50 +38,55 @@
         <div class="content-middle">
             <div class="content-head__container">
                 <div class="content-head__title-wrap">
-                    <div class="content-head__title-wrap__title bcg-title">Проверка заказа</div>
+                    <div class="content-head__title-wrap__title bcg-title">Мои заказы</div>
                 </div>
                 <div class="content-head__search-block">
                     <div class="search-container">
+                        <form class="search-container__form">
+                            <input type="text" class="search-container__form__input">
+                            <button class="search-container__form__btn">search</button>
+                        </form>
                     </div>
                 </div>
             </div>
-            <form wire:submit.prevent="placeOrder">
+
+            <div class="container" style="padding: 30px 0;">
                 <div class="row">
                     <div class="col-md-12">
-                        <div class="wrap-address-billing">
-                            <h3 class="box-title">Данные покупателя</h3>
-                            <div class="billing-address">
-                                <p class="row-in-form">
-                                    <label for="name">Имя<span>*</span></label>
-                                    <input type="text" name="name" value="" placeholder="Your name" wire:model="firstname">
-                                </p>
-                                <p class="row-in-form">
-                                    <label for="email">Email:</label>
-                                    <input type="email" name="email" value="" placeholder="Type your email" wire:model="email">
-                                </p>
-                                <p class="row-in-form">
-                                    <label for="phone">Телефон:<span>*</span></label>
-                                    <input type="number" name="phone" value="" placeholder="10 digits format" wire:model="mobile">
-                                </p>
+                        <div class="panel panel-default">
+                            <div class="panel-body">
+                                <table class="table table-striped" style="width: 100%;">
+                                    <thead>
+                                    <tr>
+                                        <th>ID</th>
+                                        <th>Имя покупателя</th>
+                                        <th>Телефон покупателя</th>
+                                        <th>Email</th>
+                                        <th>Стоимость</th>
+                                        <th>Action</th>
+                                    </tr>
+                                    </thead>
+                                    <tbody>
+                                    @foreach($orders as $order)
+                                        <tr style="text-align: center;">
+                                            <td>{{$order->id}}</td>
+                                            <td>{{$order->firstname}}</td>
+                                            <td>{{$order->mobile}}</td>
+                                            <td>{{$order->email}}</td>
+                                            <td>{{$order->subtotal}}</td>
+                                            <td>
+                                                <a href="{{route('user.orderdetails',['order_id'=>$order->id])}}" class="btn btn-info btn-sm">Подробнее</a>
+                                            </td>
+                                        </tr>
+                                    @endforeach
+                                    </tbody>
+                                </table>
                             </div>
                         </div>
                     </div>
                 </div>
+            </div>
 
-                @if(Session::has('checkout'))
-                    <div class="cart-product-list">
-                        <div class="cart-product-list__result-item">
-                            <div class="cart-product-list__result-item__text">Итого</div>
-                            <div class="cart-product-list__result-item__value">{{Session::get('checkout')['subtotal']}} рублей</div>
-                        </div>
-                    </div>
-                @endif
-                <div class="content-footer__container">
-                    <div class="btn-buy-wrap">
-                        <button type="submit" class="btn-buy-wrap__btn-link">Оплатить сейчас</button>
-                    </div>
-                </div>
-            </form>
         </div>
         <div class="content-bottom"></div>
     </div>
